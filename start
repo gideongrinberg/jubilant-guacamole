@@ -1,3 +1,2 @@
-export BOKEH_RESOURCES=cdn
-bokeh serve app.py --allow-websocket-origin="*" &
+python -m bokeh serve app.py > /dev/null 2>&1 < /dev/null & disown
 exec "$@"
