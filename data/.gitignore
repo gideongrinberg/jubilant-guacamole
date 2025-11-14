@@ -1,0 +1,5 @@
+*
+!.*
+!*.parquet
+!periodograms.h5
+!frequency.npy
