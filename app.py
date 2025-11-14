@@ -9,6 +9,7 @@ from bokeh.models import ColumnDataSource, LinearColorMapper, ColorBar, Div
 
 df = pl.read_parquet("./data/results.parquet")
 freq = np.load("./data/frequency.npy")
+freq = freq
 lightcurves = pl.scan_parquet("./data/lightcurves.parquet")
 periodograms = pl.scan_parquet("./data/periodograms.parquet")
 
@@ -41,9 +42,9 @@ source_pca = ColumnDataSource({
     "y": df["PC2"].to_numpy()
 })
 
-source_lc = ColumnDataSource(data=dict(time=[], flux=[]))
-source_flc = ColumnDataSource(data=dict(phase=[], flux=[]))
-source_pg = ColumnDataSource(data=dict(freq=[], power=[]))
+source_lc = ColumnDataSource(data=dict(x=[], y=[]))
+source_flc = ColumnDataSource(data=dict(x=[], y=[]))
+source_pg = ColumnDataSource(data=dict(x=[], y=[]))
 
 info = Div()
 
